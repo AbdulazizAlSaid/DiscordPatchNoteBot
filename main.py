@@ -19,7 +19,9 @@ async def on_message(message):
     await message.channel.send("Hello!")
 
   if message.content.startswith('lpn.' or 'LPN.' or 'Lpn.'):
-    htmlS.search()
+    activeURL = htmlS.search()
+    print(activeURL)
+    await message.channel.send(activeURL)
 
 
 

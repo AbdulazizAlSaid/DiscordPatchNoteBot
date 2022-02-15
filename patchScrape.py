@@ -8,9 +8,9 @@ class htmlScraper:
     self.url = 'https://www.dexerto.com/league-of-legends/'
 
   def search(self):
-    x=0
     base = requests.get(self.url)
     soup = BeautifulSoup(base.content, 'html.parser')
-    for link in soup.find_all('a', attrs={'href': re.compile("^https://")}):
-      if x == 20:
-        return link
+    link = soup.find('a', href=re.compile('^https://www.dexerto.com/league-of-legends/lol-patch-'))
+    final_link = link.get('href')
+
+    return final_link 
