@@ -21,7 +21,6 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-
   if message.content=='$hello':
     await message.channel.send("Hello! I am the Patch Note Bot! Type $commands to learn what I can do for you!")
     
